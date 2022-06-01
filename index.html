@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issue Management</title>
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.css" />
+  </head>
+  <body>
+    <header class="header-left-side">
+      <h2 class="logo">Issue Management</h2>
+      <nav class="nav" id="nav">
+        <ul class="link-list">
+          <li class="link-item current">
+            <a href="#overview">Overview</a>
+          </li>
+          <li class="link-item">
+            <a href="#reports" class="report-link">Reports</a>
+          </li>
+          <li class="link-item">
+            <a href="#create-issue" class="new-issue-link">New Issue</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="menu-toggle-icon lg-hidden" id="menu-toggle">
+        <i class="fa-solid fa-bars-staggered open-menu-icon"></i>
+        <i class="fa-solid fa-xmark close-menu-icon"></i>
+      </button> 
+    </header>
+    <main class="main">
+      <!-- <section class="overview section" id="overview">
+        <h1>overview</h1>
+      </section> -->
+      <section class="reports section" id="reports">
+        <h1>reports</h1>
+        <div class="table-wrapper">
+            <table class="table">
+                <tr>
+                <th>ID</th>
+                <th>Reporter</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Assignee</th>
+                <th>Date:</th>
+                <th>Status</th>
+                <th>Priority</th>
+                </tr>
+
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="single-item" id="single-item">
+          <label for="item-id">ID:</label>
+          <input type="text" class="edit-form" id="item-id">
+          <label for="item-reporter">reporter:</label>
+          <input type="text" class="edit-form" id="item-reporter">
+          <label for="item-type">type:</label>
+          <input type="text" class="edit-form" id="item-type">
+          <label for="item-desc">Description: </label>
+          <input type="text" class="edit-form" id="item-desc">
+          <label for="item-assignee">Assignee: </label>
+          <input type="text" class="edit-form" id="item-assignee">
+          <label for="item-date">Date:</label>
+          <div id="item-date"></div>
+          <div class="select">
+              <label for="item-status">Status:</label>
+              <select name="status" id="item-status">
+                <option value=""></option>
+                <option value="new">new</option>
+                <option value="open">open</option>
+                <option value="in-progress">in-progress</option>
+                <option value="completed">completed</option>
+              </select>
+              <label for="item-priority">Priority</label>
+              <select name="priority" id="item-priority">
+                <option value=""></option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent</option>
+          </select>
+        </div>
+        <div class="edit-form-btn">
+          <button class="btn edit">save</button>
+          <button class="btn edit-form-cancel-btn">Cancel</button>
+        </div>
+      </section>
+
+      <section class="create-issue section" id="create-issue">
+        <h1>create new report</h1>
+
+        <form class="new-report-form" id="new-report-form">
+            <input type="text" class="form-input" id="reporter" placeholder="Reporter name" required>
+            <input type="text" class="form-input" id="type" placeholder="Bug/Issue type" required>
+            <textarea class="form-input" id="description" cols="30" rows="6" placeholder="Description" required></textarea>
+            <input type="text" class="form-input" id="assignee" placeholder="Assignee" required>
+            
+            <div class="select">
+              <label for="status">Status:</label>
+              <select name="status" id="status">
+                <option value=""></option>
+                <option value="new">new</option>
+                <option value="open">open</option>
+                <option value="in-progress">in-progress</option>
+                <option value="completed">completed</option>
+              </select>
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority">
+                <option value=""></option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            
+          </div>
+
+            
+        </form>
+        <button class="btn submit-form-btn">Submit</button>
+        <button class="btn cancel-form-btn">Cancel</button>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+    <script type="module" src="./database.js"></script>
+  </body>
+</html>
